@@ -4,6 +4,23 @@ function setStarfield () {
     for (let index = 0; index < 100; index++) {
         background2.setPixel(randint(0, 159), randint(0, 239), 1)
     }
+    for (let index = 0; index < 5; index++) {
+        randomX = randint(0, 159)
+        randomY = randint(0, 239)
+        background2.setPixel(randomX, randomY, 1)
+        background2.setPixel(randomX, randomY + 2, 1)
+        background2.setPixel(randomX + 1, randomY + 1, 1)
+        background2.setPixel(randomX - 1, randomY + 1, 1)
+    }
+    for (let index = 0; index < 5; index++) {
+        randomX = randint(0, 159)
+        randomY = randint(0, 239)
+        background2.setPixel(randomX, randomY, 1)
+        background2.setPixel(randomX - 1, randomY - 1, 1)
+        background2.setPixel(randomX + 1, randomY + 1, 1)
+        background2.setPixel(randomX - 1, randomY + 1, 1)
+        background2.setPixel(randomX + 1, randomY - 1, 1)
+    }
     scroller.setLayerImage(scroller.BackgroundLayer.Layer2, background2)
     background1 = image.create(scene.screenWidth(), scene.screenHeight() * 2)
     background1.fill(0)
@@ -23,5 +40,7 @@ function setStarfield () {
 }
 let background0: Image = null
 let background1: Image = null
+let randomY = 0
+let randomX = 0
 let background2: Image = null
 setStarfield()
